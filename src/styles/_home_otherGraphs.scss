@@ -1,0 +1,83 @@
+.otherGraphs{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .graph{
+    height: 100%;
+    width: 30%;
+    border-radius: 5px;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    .durationGraphContainer{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 3;
+    }
+    .durationColors{
+      display: none;
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background-color: red;
+      .durationRight{
+        width: 70%;
+        //left: 30%;
+        height: 100%;
+        position: absolute;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      &:hover{
+        .durationRight{
+          //width: calc(100% - var(--mouse-x, 0));
+          left: var(--mouse-x, 0);
+        }
+      }
+    }
+    #duration{
+      width: 100%;
+      height: 100%;
+      font-size: 12px;
+      background-color: red;
+    }
+    #activityTypes{
+      width: 100%;
+      height: 100%;
+      background-color: $grey;
+      font-size: 12px;
+    }
+    #scoreTitle{
+      position: absolute;
+      top: 5%;
+      left: 10%;
+      font-size: 15px;
+    }
+    #score{
+      width: 100%;
+      height: 100%;
+      background-color: #fbfbfb;
+      font-size: 12px;
+      .scoreLegend{
+        color: black;
+        font-size: 2em;
+        font-weight: 700;
+        transform: translate(6%, -22%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        div{
+          width: 50%;
+          display: flex;
+          flex-wrap: wrap;
+          font-size: .6em;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+

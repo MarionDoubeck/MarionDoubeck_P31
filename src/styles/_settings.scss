@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+$font-1: "Roboto";
+$red: #FF0000;
+$black: #020203;
+$grey: #282D30;
+$white: #E5E5E5;
+$blue: #4AB8FF;
+$yellow: #FDCC0C;
+$pink: #FD5181;
+
+*{
+  font-family: $font-1;
+  margin: 0;
+  padding: 0;
+}
+
+a, a:visited{
+  text-decoration: none;
+  color: white;
+}
+
+.loader{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  margin:-60px 0 0 -60px;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 
+  100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+  100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+  100% { 
+      -webkit-transform: rotate(360deg); 
+      transform:rotate(360deg); 
+  } 
+}
+
+.generalContent{
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 117px 117px 1fr;
+  grid-template-rows: 91px calc(100vh - 91px);
+  grid-template-areas: 
+  'l l n'
+  'lb c c';
+  .logo{
+    grid-area: l;
+    background-color: $black;
+    img{
+      transform: translate(7% , 15%);
+    }
+  }
+  .navigation{
+    grid-area: n;
+    width: 100%;
+    display: flex;
+    background-color: $black;
+    color: white;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.3em;
+  }
+  .leftBar{
+    grid-area: lb;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $black;
+    color: white;
+    justify-content: center;
+    position: relative;
+    .icons{
+      height: 50%;
+      transform: translateY(-20%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      .icon{
+        background-color: white;
+        width: 64px;
+        height: 64px;
+        border-radius: 6px;
+        text-align: center;
+        img{
+          transform: translateY(50%);
+        }
+      }
+    }
+    .copyright{
+      position:absolute;
+      bottom: 30px;
+      left: -10px;
+      transform: rotate(-90deg) translate(50%, -50%);
+      font-size: 1.3vh;
+      width: 150px;
+    }
+  }
+  .content{
+    grid-area: c;
+    padding: 5% 6%;
+    background-color: $white;
+  }
+}

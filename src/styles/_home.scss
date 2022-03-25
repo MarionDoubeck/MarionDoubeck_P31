@@ -1,0 +1,23 @@
+.home .content{
+  .homeGraphs{
+    display: grid;
+    height: calc(90% - 1.2em - 3vh);
+    width: 100%;
+    margin: 3vh 0;
+    grid-gap: 1.2em;
+    grid-template-columns: 80% 20% ;
+    grid-template-rows: 60% 40%;
+    grid-template-areas: 
+    'dag kd'
+    'og kd';
+    .dailyActivityGraph{
+      grid-area: dag ;
+    }
+    .keyData{
+      grid-area : kd;
+    }
+    .otherGraphs{
+      grid-area : og;
+    }
+  }
+}
